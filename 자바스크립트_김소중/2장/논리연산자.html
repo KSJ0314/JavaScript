@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var pil = parseInt(prompt("필기 점수는?"));
+    var sil = parseInt(prompt("실기 점수는?"));
+
+    var avg = (pil+sil)/2;
+
+    if (avg>=90){
+      document.write("당신의 등급은 : 최우수");
+    } else if (avg>=80){
+      document.write("당신의 등급은 : 우수");
+    } else{
+      document.write("당신의 등급은 : 일반");
+    }
+  </script>
+</body>
+</html>
