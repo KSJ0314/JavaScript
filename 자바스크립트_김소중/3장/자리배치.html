@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var memNum = parseInt(prompt("입장객은 몇 명 인가요?"));
+    var colNum = parseInt(prompt("한 줄에 몇 명씩 앉나요?"));
+
+    var line = parseInt(memNum / colNum);
+    var nam = 0;
+    
+    if (memNum % colNum) {
+      line++;
+      nam = colNum - memNum % colNum;
+    }
+    document.write(line + "줄, 남은 좌석 : " + nam);
+
+  </script>
+</body>
+
+</html>

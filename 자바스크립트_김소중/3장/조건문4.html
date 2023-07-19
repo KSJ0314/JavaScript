@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    var id = "자바";
+    var password = "1234";
+
+    var user_id = prompt("아이디입력");
+    var user_password = prompt("비번입력");
+
+    // if (id != user_id){
+    //   alert("아이디 오류");
+    // } else if (password != user_password) {
+    //   alert("비번 오류");
+    // } else {
+    //   alert("로그인 성공");
+    // }
+    
+    if(id==user_id){
+      if(password == user_password){
+        alert("로그인 성공");
+      } else {
+        alert("비번 오류");
+        location.reload();
+      }
+    } else {
+      alert("아이디 오류");
+      location.reload();
+    }
+
+  </script>
+</body>
+
+</html>

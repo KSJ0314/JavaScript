@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var thisYear = 2023;
+    var thisMonth = 7;
+    var thisDay = 19;
+    var birthYear = parseInt(prompt("태어난 연도를 입력해주세요."));
+    var birthMonth = parseInt(prompt("태어난 월을 입력해주세요."));
+    var birthDay = parseInt(prompt("태어난 일을 입력해주세요."));
+
+    var age = birthDay+birthMonth*100 > thisDay+thisMonth*100 ? thisYear - birthYear - 1 : thisYear - birthYear;
+    alert("당신의 나이는" + age + "입니다.");
+  </script>
+</body>
+
+</html>
