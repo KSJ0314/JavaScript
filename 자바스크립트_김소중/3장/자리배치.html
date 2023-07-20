@@ -3,6 +3,15 @@
 
 <head>
   <title>Document</title>
+  <style>
+    table,
+    tr,
+    td {
+      padding: 10px;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
 </head>
 
 <body>
@@ -12,12 +21,23 @@
 
     var line = parseInt(memNum / colNum);
     var nam = 0;
-    
+
     if (memNum % colNum) {
       line++;
       nam = colNum - memNum % colNum;
     }
     document.write(line + "줄, 남은 좌석 : " + nam);
+
+    document.write("<table>");
+    for (var i = 0; i < line; i++) {
+      document.write("<tr>");
+      for (var j = 1; j <= colNum; j++) {
+        document.write("<td>" + "좌석" + (i*colNum + j) + "</td>");
+      }
+      document.write("</tr>");
+    }
+    document.write("</table>");
+
 
   </script>
 </body>

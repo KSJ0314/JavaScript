@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var sum = 0;
+
+    do {
+      var i = parseInt(prompt("숫자를 입력하세요."));
+      if (isNaN(i)){
+        location.reload();
+      }
+      if (i) {
+        sum += i;
+      }
+    } while (i);
+    
+    document.write(sum);
+  </script>
+</body>
+
+</html>
