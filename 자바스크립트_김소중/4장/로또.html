@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      list-style: none;
+    }
+    li{
+      background-color: aqua;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 20px;
+    }
+    .container{
+      text-align: center;
+      margin-top: 50px;
+    }
+    p{
+      line-height: 50px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <h3>로또 번호 출력하기</h3>
+    <ul>
+      <li><p></p></li>
+      <li><p></p></li>
+      <li><p></p></li>
+      <li><p></p></li>
+      <li><p></p></li>
+      <li><p></p></li>
+    </ul>
+  </div>
+
+  <script>
+
+    var ran = [];
+    for(var i = 0; i < 6; i++){
+      ran[i] = parseInt(Math.random()*45)+1;
+      document.querySelector(`p:nth-child(${i})`).innerHTML = ran[i];
+      for (var j = 0; j < i; j++){
+        if (ran[i] == ran[j]) {
+          i--;
+          break;
+        }
+      }
+    }
+    </script>
+</body>
+</html>

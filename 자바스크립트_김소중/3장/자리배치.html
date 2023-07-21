@@ -10,6 +10,10 @@
       padding: 10px;
       border: 1px solid black;
       border-collapse: collapse;
+      text-align: center;
+    }
+    table {
+      margin: 20px auto;
     }
   </style>
 </head>
@@ -26,17 +30,34 @@
       line++;
       nam = colNum - memNum % colNum;
     }
-    document.write(line + "줄, 남은 좌석 : " + nam);
 
     document.write("<table>");
     for (var i = 0; i < line; i++) {
       document.write("<tr>");
       for (var j = 1; j <= colNum; j++) {
-        document.write("<td>" + "좌석" + (i*colNum + j) + "</td>");
+        document.write("<td>" + "좌석 " + (i*colNum + j) + "</td>");
+        if(memNum == (i*colNum + j)){
+          break;
+        }
       }
       document.write("</tr>");
     }
     document.write("</table>");
+
+    var t = "<table>";
+      for (var i = 0; i < line; i++) {
+      t+="<tr>";
+      for (var j = 1; j <= colNum; j++) {
+        t+="<td>" + "좌석 " + (i*colNum + j) + "</td>";
+        if(memNum == (i*colNum + j)){
+          break;
+        }
+      }
+      t+="</tr>";
+    }
+    t+="</table>";
+
+    document.write(t);
 
 
   </script>
