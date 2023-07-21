@@ -25,7 +25,16 @@
   </style>
 </head>
 <body>
-  
+  <div id="container">
+    <ul>
+      <li><p></p></li>
+      <li><p></p></li>
+      <li><p></p></li>
+      <li><p></p></li>
+      <li><p></p></li>
+      <li><p></p></li>
+    </ul>
+  </div>
   <script>
 
     var ran = [];
@@ -33,7 +42,7 @@
     var t = "<h3>로또 번호 출력하기</h3>";
     for(var i = 0; i < 6; i++){
       ran[i] = parseInt(Math.random()*45)+1;
-      document.querySelector(`p:nth-child(${i})`).innerHTML = ran[i];
+      document.querySelector('p:nth-child('+(i+1)+')').innerHTML = ran[i];
       for (var j = 0; j < i; j++){
         if (ran[i] == ran[j]) {
           i--;
@@ -41,6 +50,7 @@
         }
       }
     }
+    
     </script>
 </body>
 </html>
