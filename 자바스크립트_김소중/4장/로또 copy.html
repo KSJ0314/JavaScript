@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrap {
+      padding-top: 100px;
+      height: 100px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      padding: 50px;
+    }
+
+    #wrap div {
+      display: flex;
+      justify-content: center;
+    }
+
+    #wrap p {
+      background-color: pink;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      line-height: 100px;
+      font-size: 30px;
+    }
+
+    #wrap p:not(:first-child) {
+      margin-left: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>로또 번호 출력하기</h1>
+    <div>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+  <script>
+
+    var lotto = [];
+
+    for (var i = 1; i <= 45; i++) {
+      lotto.push(i);  // 1~45까지 lotto값 추가
+    }
+    for (var i = 1; i < 7; i++) {
+      var ranNum = Math.floor(Math.random() * lotto.length);  // Math.floor -> 소수점 자르기
+      document.querySelector(`p:nth-child(${i})`).innerHTML = lotto[ranNum];
+      lotto.splice(ranNum, 1);
+    }
+
+  </script>
+</body>
+
+</html>

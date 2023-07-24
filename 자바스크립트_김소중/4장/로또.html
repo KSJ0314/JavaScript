@@ -13,36 +13,40 @@
     }
     li{
       background-color: aqua;
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       display: inline-block;
       margin: 20px;
+      line-height: 100px;
+      font-size: 30px;
     }
-    p{
-      line-height: 50px;
+    h1{
+      text-align: center;
+      line-height: 100px;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
   <div id="container">
+    <h1>로또 번호 출력하기</h1>
     <ul>
-      <li><p></p></li>
-      <li><p></p></li>
-      <li><p></p></li>
-      <li><p></p></li>
-      <li><p></p></li>
-      <li><p></p></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
   </div>
   <script>
 
     var ran = [];
 
-    var t = "<h3>로또 번호 출력하기</h3>";
     for(var i = 0; i < 6; i++){
       ran[i] = parseInt(Math.random()*45)+1;
-      document.querySelector('p:nth-child('+(i+1)+')').innerHTML = ran[i];
+      document.querySelector('li:nth-child('+(i+1)+')').innerHTML = ran[i];
       for (var j = 0; j < i; j++){
         if (ran[i] == ran[j]) {
           i--;
