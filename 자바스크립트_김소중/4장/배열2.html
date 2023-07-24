@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>배열1</title>
+</head>
+
+<body>
+  <script>
+    var arr_1 = ["사당", "교대", "방배", "강남"];
+    var arr_2 = ["신사", "압구정", "옥수"];
+
+    var result = arr_1.join("-");
+    document.write(result, "<br>");
+
+    result = arr_1.concat(arr_2).sort().join("-");
+    document.write(result, "<br>");
+
+
+    result = arr_1.slice(2, 4);
+    document.write(result, "<br>");
+
+    arr_1.sort();
+    document.write(arr_1, "<br>");
+
+    arr_1.push("역삼");
+    document.write(arr_1, "<br>");
+
+    arr_1.pop();
+    document.write(arr_1, "<br>");
+
+    arr_1.splice(1, 1, "ㅋㅋ", "ㄷㄷㅋ");
+    document.write(arr_1, "<br>");
+
+
+    arr_1.splice(arr_1.length - 1);
+    document.write(arr_1, "<br>");
+
+
+
+  </script>
+</body>
+
+</html>
