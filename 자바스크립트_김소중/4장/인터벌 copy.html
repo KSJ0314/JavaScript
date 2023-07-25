@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    .container {
+      border: 20px solid gray;
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    h3 {
+      margin-top: 95px;
+    }
+
+    p {}
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h3>숫자 맞추기 게임</h3>
+    <p>당신이 맞출 숫자 : <span id="num1"></span></p>
+    <p id="num2"></p>
+    <button onclick="clearInterval(auto_1)">스탑</button>
+  </div>
+
+  <script>
+    var num = Math.ceil(Math.random() * 10);
+    document.querySelector("#num1").innerHTML = num;
+
+    var auto_1 = setInterval(function () {
+      var now = Math.ceil(Math.random() * 10);
+      document.querySelector("#num2").innerHTML = now;
+    }, 300);
+  </script>
+
+</body>
+
+</html>

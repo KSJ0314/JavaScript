@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var name = prompt("당신의 이름은?");
+    var ssn = prompt("당신의 주민번호는?");
+    var t = name.concat(", ") +  ssn.substring(0, 8).concat("******");
+    document.write(t);
+
+  </script>
+</body>
+
+</html>

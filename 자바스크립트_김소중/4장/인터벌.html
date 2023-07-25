@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <style>
+    .container {
+      border: 20px solid gray;
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+      text-align: center;
+      margin: 20px auto;
+    }
+    h3{
+      margin-top: 110px;
+    }
+    p {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h3>자바 스크립트 시계</h3>
+    <p id="time"></p>
+  </div>
+
+  <script>
+    
+    
+    var auto_1 = setInterval(function(){
+      var now = new Date();
+      document.querySelector("#time").innerHTML = now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초";
+    }, 1000);
+    </script>
+
+</body>
+</html>
