@@ -28,16 +28,23 @@
     <p>당신이 맞출 숫자 : <span id="num1"></span></p>
     <p id="num2"></p>
     <button onclick="clearInterval(auto_1)">스탑</button>
+    <button onclick="replay()">리플레이</button>
   </div>
 
   <script>
     var num = Math.ceil(Math.random() * 10);
     document.querySelector("#num1").innerHTML = num;
-
     var auto_1 = setInterval(function () {
-      var now = Math.ceil(Math.random() * 10);
-      document.querySelector("#num2").innerHTML = now;
-    }, 300);
+        var now = Math.ceil(Math.random() * 10);
+        document.querySelector("#num2").innerHTML = now;
+      }, 100);
+      
+    function replay() {
+      var auto_1 = setInterval(function () {
+        var now = Math.ceil(Math.random() * 10);
+        document.querySelector("#num2").innerHTML = now;
+      }, 100);
+    }
   </script>
 
 </body>
