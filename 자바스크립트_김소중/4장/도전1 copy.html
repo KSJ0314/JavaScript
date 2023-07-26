@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var menu = ["짜장면", "돈까스", "김치찌개", "스파게티", "초밥"];
+    var ml=menu.length;
+    for (var i = 0; i < ml; i++){
+      var a = Math.floor(Math.random()*menu.length)
+      document.write(menu[a], "<br>");
+      menu.splice(a, 1);
+    }
+  </script>
+</body>
+
+</html>

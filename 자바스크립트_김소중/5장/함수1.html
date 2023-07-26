@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var count = 0;
+
+    myFnc();
+    
+    function myFnc() {
+      count++;
+      document.write("안녕하세요. " + count + "<br>");
+    }
+    
+    // theFnc();
+    // 생성 전 호출 불가 (호이스팅 안됨)
+    
+    theFnc = function(){
+      count++;
+      document.write("byte" + count, "<br>");
+    }
+    
+    theFnc();
+
+  </script>
+</body>
+
+</html>
