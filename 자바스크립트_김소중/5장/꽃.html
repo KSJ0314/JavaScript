@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <style>
+    #item {
+      position: relative;
+      width: 500px;
+      height: auto;
+      padding: 15px 20px;
+      margin: auto;
+    }
+    img{
+      width: 400px;
+      height: 300px;
+      position: absolute;
+    }
+    #desc {
+      display: none;
+      position: relative;
+      top: 300px;
+    }
+    .over {
+      position: relative;
+      top: 270px;
+    }
+    button{
+      background-color: rgba(255,255,255,0.7);
+      padding: 5px;
+      border: 1px solid gray;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <div id="item">
+    <img src="imges/고양이.jpg">
+    <button class="over" id="open" onclick="show()">상세 설명 보기</button>
+    <div id="desc" class="detail">
+      <h4>고양이</h4>
+      <p>귀
+        <br>여
+        <br>움
+      </p>
+      <button id="close" onclick="hide()">상세 설명 닫기</button>
+    </div>
+  </div>
+
+  <script>
+    function show() {
+      document.getElementById('open').style.display = "none";
+      document.getElementById('desc').style.display = "block";
+    }
+    function hide() {
+      document.querySelector('#open').style.display = "block";
+      document.querySelector('#desc').style.display = "none";
+    }
+  </script>
+</body>
+</html>

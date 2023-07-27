@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <input type="checkbox" name="fruit" value="사과" id="check">사과
+  <input type="checkbox" name="fruit" value="바나나" id="check">바나나
+  <input type="checkbox" name="fruit" value="복숭아" id="check">복숭아
+  <h1 id="result"></h1>
+  <button onclick="go()">확인</button>
+  
+
+  <script>
+    function go(){
+      var arr = []
+      var check = document.querySelectorAll('input[type="checkbox"]');
+      
+      for (i in check){
+        if(check[i].checked){
+          arr.push(check[i].value);
+        }
+      }
+      if(arr.length){
+        document.querySelector('#result').innerText = arr;
+      } else {
+        document.querySelector('#result').innerText = "선택없음";
+      }
+    }
+  </script>
+</body>
+</html>
