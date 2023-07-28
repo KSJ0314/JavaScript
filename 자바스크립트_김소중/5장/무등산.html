@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <style>
+    #galleryZone {
+      position: relative;
+    }
+
+    .but {
+      position: absolute;
+      bottom: 0px;
+      left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="galleryZone">
+    <p class="but">
+      <button id="but1" onclick="gallery(0)">이전</button>
+      <button id="but1" onclick="gallery(1)">다음</button>
+    </p>
+    <p>
+      <img src="imges/1.jpg" id="photo">
+    </p>
+  </div>
+  <script>
+    var num = 1;
+    function gallery(direct) {
+      if (direct) {
+        if (num == 4) num = 0;
+        num++;
+      } else {
+        if (num == 1) num = 5;
+        num--;
+      }
+      document.getElementById("photo").setAttribute("src", "imges/" + num + ".jpg");
+    }
+  </script>
+</body>
+
+</html>
