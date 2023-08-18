@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>Document</title>
+  <style>
+    section {
+      display: inline-block;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+  <script src="js/jquery_1.12.4_jquery.min.js"></script>
+  <script>
+    function game() {
+
+      var com = Math.ceil(Math.random() * 3);
+      var user = prompt("당신의 선택은?");
+      var userNum;
+      switch (user) {
+        case "가위":
+          userNum = 1;
+          break;
+        case "바위":
+          userNum = 2;
+          break;
+        case "보":
+          userNum = 3;
+          break;
+      }
+      $("#sec_1 img").attr("src", "images/math_img_" + com + ".jpg");
+      $("#sec_2 img").attr("src", "images/math_img_" + userNum + ".jpg");
+
+      var result;
+      if (com == userNum){
+        result = "무승부";
+      } else if (userNum==1 && com==3 || userNum==2 && com==1 || userNum==3 && com==2){
+        result = "승리";
+      } else {
+        result = "패배";
+      }
+      $("#result").text(result);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>
+    <strong>신나는 가위바위보 게임!!!</strong>
+  </h1>
+  <section id="sec_1">
+    <h2>컴퓨터</h2>
+    <p>
+      <img src="images/math_img_1.jpg">
+    </p>
+  </section>
+  <section id="sec_2">
+    <h2>사용자</h2>
+    <p>
+      <img src="images/math_img_1.jpg">
+    </p>
+  </section>
+  <br>
+  <button type="button" onclick="game()">게임시작</button>
+  <br>
+  <h2 id="result"></h2>
+</body>
+
+</html>
