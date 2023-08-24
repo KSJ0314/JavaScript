@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    #main{
+      width: 400px;
+      margin: 50px auto;
+      text-align: center;
+      border: 3px solid lightgray;
+    }
+    #main img {
+      position: relative;
+    }
+  </style>
+  <script src="js/jquery_1.12.4_jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("#bird1").on("click", function(){
+        $(this).animate({top:'-100px'},500).animate({top:'0px'},500);
+      });
+
+      $("#bird2").on("dblclick", function(){
+        $(this).animate({top:'-100px'},500).animate({top:'0px'},500);
+      });
+
+      var num = 0;
+      $("#bird3").on("click", function(){
+        num-=100;
+        $(this).animate({top:num},500);
+      });
+
+      var num2 = 0;
+      $("#dog1").on("dblclick", function(){
+        num2+=100;
+        $(this).animate({top:num2},500);
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <div id="main">
+    <img src="images/bird17.gif" id="bird1">
+    <img src="images/bird20.gif" id="bird2">
+    <img src="images/bird28.gif" id="bird3">
+    <img src="images/shiba2.gif" id="dog1">
+  </div>
+</body>
+
+</html>
