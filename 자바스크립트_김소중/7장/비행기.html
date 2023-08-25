@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>비행기</title>
+  <style>
+    #main {
+      width: 500px;
+      height: 600px;
+      border: 5px solid gray;
+    }
+
+    #background {
+      width: 500px;
+      height: 600px;
+      position: absolute;
+    }
+
+    #airplane {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      top: 500px;
+      left: 225px;
+    }
+
+    #shoot {
+      width: 20px;
+      height: 30px;
+      position: absolute;
+    }
+  </style>
+  <script src="js/jquery_1.12.4_jquery.min.js"></script>
+  <script>
+    $(function () {
+      $(document).on("keydown", keyEventFnc);
+      var x = 225;
+      var y = 500;
+      var shoot = true;
+      function keyEventFnc(e) {
+        switch (e.keyCode) {
+          case 37:
+            x -= 10;
+            break;
+          case 38:
+            y -= 10;
+            break;
+          case 39:
+            x += 10;
+            break;
+          case 40:
+            y += 10;
+            break;
+          case 32:
+            if (shoot){
+              shoot =false;
+              $("#mi").html('<img src="images/shoot.png" id="shoot">');
+              $("#shoot").css({ "top":y, "left":x+27}).animate({top:'10'},1000);
+              setTimeout(() => {
+                $("#mi").html('');
+                shoot = true;
+              }, 1000);
+            }
+            break;
+        }
+        if(y>550){
+          y=550;
+        } else if(y<0){
+          y=0;
+        } else if(x<5){
+          x = 5;
+        } else if(x > 445){
+          x=445;
+        }
+        $("#airplane").css({ "top": y, "left": x });
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="main">
+    <img src="images/sky.png" id="background">
+    <img src="images/fighters.png" id="airplane">
+    <div id="mi"></div>
+  </div>
+</body>
+
+</html>

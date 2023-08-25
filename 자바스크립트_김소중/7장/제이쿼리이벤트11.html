@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+  </style>
+  <script src="js/jquery_1.12.4_jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("#rel_site").on("change", function(){
+        $(".txt").val($(this).val());
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <select id="rel_site">
+    <option value="">- 선택 -</option>
+    <option value="캥거루">캥거루</option>
+    <option value="도마뱀">도마뱀</option>
+    <option>타란튤라</option>
+    <option>흰죽지</option>
+    <option>여우원숭이</option>
+    <option>딱다구리</option>
+    <option>카이만</option>
+    <option>선생님</option>
+  </select>
+  <p>
+    <textarea class="txt"></textarea>
+  </p>
+</body>
+
+</html>
