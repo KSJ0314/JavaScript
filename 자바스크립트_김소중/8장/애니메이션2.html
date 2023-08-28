@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    #main{
+      position: relative;
+      text-align: right;
+    }
+    #main img {
+      position: relative;
+    }
+  </style>
+  <script src="js/jquery_1.12.4_jquery.min.js"></script>
+  <script>
+    $(function () {
+
+      $("#go").click(function(){
+        for (var i = 0; i < 5; i++){
+          var speed = Math.ceil(Math.random()*10) * 1000;
+          $("#main img:eq("+i+")").animate({
+            marginRight : $("#main").css("width")
+          },speed);
+        }
+
+      });
+     
+    });
+
+  </script>
+</head>
+
+<body>
+  <div id="main">
+    <img src="images/snail.gif"><br>
+    <img src="images/snail.gif"><br>
+    <img src="images/snail.gif"><br>
+    <img src="images/snail.gif"><br>
+    <img src="images/snail.gif"><br>
+  </div>
+  <br>
+  <button type="button" id="go">달려라 달팽이!!</button>
+</body>
+
+</html>

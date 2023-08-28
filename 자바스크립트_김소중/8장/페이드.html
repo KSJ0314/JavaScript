@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+  </style>
+  <script src="js/jquery_1.12.4_jquery.min.js"></script>
+  <script>
+    $(function () {
+      $(".btn2").hide();
+      $(".btn1").on("click",function(){
+        $(".box").slideUp(1000,"linear", function(){
+          $(".btn1").hide();
+          $(".btn2").show();
+        });
+      });
+
+      $(".btn2").on("click",function(){
+        $(".box").fadeIn(1000,"swing", function(){
+          $(".btn2").hide();
+          $(".btn1").show();
+        });
+      });
+
+      $(".btn3").on("click",function(){
+        $(".box").slideToggle(1000,"linear");
+      });
+
+      $(".btn4").on("click",function(){
+        $(".box").fadeTo("fast",0.3);
+      });
+
+      $(".btn5").on("click",function(){
+        $(".box").fadeTo("fast",1);
+      });
+
+    });
+
+  </script>
+</head>
+
+<body>
+  <p>
+    <button class="btn1">슬라이드업</button>
+    <button class="btn2">페이드인</button>
+  </p>
+  <p>
+    <button class="btn3">토글슬라이드</button>
+  </p>
+  <p>
+    <button class="btn4">페이드투(0.3)</button>
+    <button class="btn5">헤이드투(1)</button>
+  </p>
+  <div class="box">
+    <div class="content">
+      (서울=연합뉴스) 홍준석 기자 = 28일 오전 9시 괌 북북서쪽 570㎞ 해상에서 제11호 태풍 '하이쿠이'가 발생했다고 기상청이 밝혔다.
+      하이쿠이 중심기압은 998hPa(헥토파스칼), 최대풍속은 18㎧(시속 65㎞)이다.
+      시속 14㎞로 서북서진 중인 하이쿠이는 다음 달 2일 오전 9시께 일본 오키나와 남서쪽 150㎞ 해상까지 이동할 것으로 예상된다.
+      태풍으로 발달한 지 얼마 되지 않은 만큼 변동성은 크다.
+      한국형수치예보모델(KIM)은 하이쿠이가 일본 남쪽 해상으로 이동할 것으로 보고있지만, 유럽 중기예보센터 모델(ECMWF)은 상하이 방면으로, 영국 기상청 통합모델(UM)은 대만을 거쳐 중국 남부 내륙으로
+      상륙할 것으로 전망했다.
+    </div>
+  </div>
+</body>
+
+</html>
