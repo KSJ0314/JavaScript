@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    #main {
+      width: 500px;
+      height: 100px;
+      position: relative;
+    }
+    #main img{
+      position: absolute;
+      left: 400px;
+    }
+  </style>
+  <script src="js/jquery_1.12.4_jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("#bt1").click(function(){
+        var time = ($("#main img").position().left/400)*5000;
+        $("#main img").animate({left:"0px"},time, "linear");
+      });
+      $("#bt2").click(function(){
+        $("#main img").stop();
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <div id="main">
+    <img src="images/runner.gif">
+  </div>
+    <p>
+      <button type="button" id="bt1">출발</button>
+      <button type="button" id="bt2">멈춤</button>
+    </p>
+</body>
+
+</html>

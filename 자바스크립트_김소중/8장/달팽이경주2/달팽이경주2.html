@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var speed1 = (Math.random()*5)*1000 + 3000;
+            var speed2 = (Math.random()*5)*1000 + 3000;
+            var speed3 = (Math.random()*5)*1000 + 3000;
+            setInterval(move);
+            function move(){
+                $("#bg1").animate({ left: "500px" }, 30000, "linear").animate({ left: "-500px" }, 0);
+                $("#sprite1").animate({ left: "-100px" }, speed1, "linear").animate({ left: "500px" }, 0);
+                $("#sprite2").animate({ left: "-100px" }, speed2, "linear").animate({ left: "500px" }, 0);
+                $("#sprite3").animate({ left: "-100px" }, speed3, "linear").animate({ left: "500px" }, 0);
+                $("#bg2").animate({ left: "0px" }, 30000, "linear").animate({ left: "-500px" }, 0);
+                $("#bg3").animate({ left: "0px" }, 20000, "linear").animate({ left: "-583px" }, 0);
+                $("#bg4").animate({ left: "0px" }, 10000, "linear").animate({ left: "-500px" }, 0);
+            }
+        });
+    </script>
+    <style>
+        #screen {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            border: 2px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            background-image: url(images/land_bg.gif);
+            margin: auto;
+        }
+
+        #screen div {
+            position: absolute;
+            white-space: nowrap;
+        }
+
+        #bg1{
+            top: 50px;
+            left: -500px;
+        }
+
+        #sprite1{
+            top: 170px;
+            left: 400px;
+            z-index: 4;
+        }
+        #sprite2{
+            top: 150px;
+            left: 200px;
+            z-index: 3;
+        }
+        #sprite3{
+            top: 200px;
+            left: 300px;
+            z-index: 5;
+        }
+        
+        #bg2{
+            top: 180px;
+            left: -500px;
+            z-index: 1;
+        }
+        #bg3{
+            top: 220px;
+            left: -583px;
+            z-index: 2;
+        }
+        #bg4{
+            top: 250px;
+            left: -500px;
+            z-index: 6;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="bg1">
+            <img src="images/land04.gif" />
+        </div>
+        <div id="sprite1">
+            <img src="images/runner.gif" />
+        </div>
+        <div id="bg2">
+            <img src="images/land03.gif" /><img src="images/land03.gif" />
+        </div>
+        <div id="sprite3">
+            <img src="images/runner.gif" />
+        </div>
+        <div id="sprite2">
+            <img src="images/runner.gif" />
+        </div>
+        <div id="bg3">
+            <img src="images/land02.gif" /><img src="images/land02.gif" />
+        </div>
+        <div id="bg4">
+            <img src="images/land01.gif" /><img src="images/land01.gif" />
+        </div>
+    </div>
+</body>
+
+</html>
